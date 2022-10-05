@@ -5,5 +5,5 @@ package com.hemebiotech.analytics;
  */
 public interface ISymptomWriter {
 
-	void SetSymptoms();
+	void setSymptoms();
 }
