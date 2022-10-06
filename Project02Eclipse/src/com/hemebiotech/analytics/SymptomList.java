@@ -14,19 +14,22 @@ public class SymptomList {
 
 	/**
 	 * 
-	 * @param symptoms a list with all symptoms
+	 * @param symptoms a list with all symptoms ordered by alphabetical
 	 */
 	public SymptomList(List<String> symptomList) {
 		TreeMap<String, Integer> results = new TreeMap<>();
 
 		for (int i = 0; i < symptomList.size(); i++) {
 
+			// If the key already exists
 			if (results.containsKey(symptomList.get(i))) {
-				int count = results.get(symptomList.get(i));
-				count++;
-				results.put(symptomList.get(i).toLowerCase().trim(), count);
+				int count = results.get(symptomList.get(i)); // retrieval of current value
+				count++; // Adding 1 to the value
+				results.put(symptomList.get(i).toLowerCase().trim(), count); // We put everything in lowercase, we
+																				// remove superfluous spaces and we add
+																				// the new count
 			} else {
-				results.put(symptomList.get(i).toLowerCase().trim(), 1);
+				results.put(symptomList.get(i).toLowerCase().trim(), 1); // Set default value to 1
 			}
 		}
 
